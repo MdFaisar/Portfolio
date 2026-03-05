@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── NAV ─────────────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="nav-logo" id="nav-logo">AR</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </nav>
+
+  <!-- ── MOBILE DRAWER ──────────────────────────────────────── -->
+  <div class="nav-drawer-overlay" id="drawer-overlay"></div>
+  <div class="nav-drawer" id="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <ul class="drawer-links" id="drawer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+    </ul>
+    <div class="drawer-divider"></div>
+    <a href="#contact" class="drawer-cta" id="drawer-cta">Get In Touch</a>
+    <div class="drawer-socials" id="drawer-socials"></div>
+  </div>
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge reveal">Available for Opportunities</div>
+        <h1 class="hero-name reveal" id="hero-name">Alex Rivera</h1>
+        <p class="hero-tagline reveal" id="hero-tagline">Aspiring Software Developer</p>
+        <p class="hero-bio reveal" id="hero-bio">Placeholder bio text.</p>
+        <div class="hero-actions reveal">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="#" class="btn-secondary" id="hero-resume">Resume ↗</a>
+        </div>
+        <div class="hero-socials reveal" id="hero-socials"></div>
+      </div>
+      <div class="hero-photo-wrap reveal">
+        <div class="hero-photo-ring"></div>
+        <div class="hero-photo" id="hero-photo">
+          <img src="" alt="Profile" id="hero-img" onerror="this.parentElement.classList.add('no-photo')" />
+          <div class="photo-fallback" id="photo-fallback">AR</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ─────────────────────────────────────────────── -->
+  <section id="about">
+    <div class="container">
+      <div class="section-label">01 / About Me</div>
+      <h2 class="section-title">Who I Am</h2>
+
+      <!-- Row 1: description left | photo right -->
+      <div class="about-top">
+        <div class="about-left-col">
+          <p id="about-description"></p>
+          <div class="education-block">
+            <h4>Education</h4>
+            <div id="education-list"></div>
+          </div>
+        </div>
+        <div class="about-photo-col">
+          <div class="about-photo-wrap">
+            <img id="about-photo-img" src="" alt="Student photo" onerror="this.style.display='none'" />
+            <div class="about-photo-fallback" id="about-photo-fallback"></div>
+          </div>
+          <!-- Row 2: languages left | projects count right -->
+          <div class="about-bottom-row">
+            <div class="lang-block">
+              <h4>Communication Languages</h4>
+              <div class="lang-list" id="lang-list"></div>
+            </div>
+            <div class="projects-count-card" id="projects-count-card">
+              <div class="projects-count-value" id="projects-count-value">10+</div>
+              <div class="projects-count-label">Projects</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ─────────────────────────────────────────────── -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-label">02 / Skills</div>
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-cards-grid" id="skills-cards-grid">
+        <!-- Populated by JS from CONFIG -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ──────────────────────────────────────────── -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-label">03 / Projects</div>
+      <h2 class="section-title">What I've Built</h2>
+      <div class="projects-featured" id="projects-featured"></div>
+      <h3 class="other-projects-title">Other Noteworthy Projects</h3>
+      <div class="projects-other" id="projects-other"></div>
+    </div>
+  </section>
+
+  <!-- ── CERTIFICATIONS ────────────────────────────────────── -->
+  <section id="certifications">
+    <div class="container">
+      <div class="section-label">04 / Certifications</div>
+      <h2 class="section-title">Credentials</h2>
+      <div class="certs-grid" id="certs-grid"></div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ───────────────────────────────────────────── -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-label">05 / Get In Touch</div>
+      <h2 class="section-title">Let's Talk</h2>
+      <div class="contact-layout">
+        <div class="contact-info">
+          <p class="contact-intro">I'm actively looking for internships and entry-level roles. Have a question or want to collaborate? My inbox is always open.</p>
+          <div class="contact-item">
+            <span class="contact-icon">✉</span>
+            <a href="#" id="contact-email-link" class="contact-link"></a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✆</span>
+            <a href="#" id="contact-phone-link" class="contact-link"></a>
+          </div>
+          <div class="contact-socials" id="contact-socials"></div>
+        </div>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-name">Your Name</label>
+              <input type="text" id="f-name" placeholder="Jane Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="f-email">Your Email</label>
+              <input type="email" id="f-email" placeholder="jane@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-subject">Subject</label>
+            <input type="text" id="f-subject" placeholder="Internship Opportunity" required />
+          </div>
+          <div class="form-group">
+            <label for="f-message">Message</label>
+            <textarea id="f-message" rows="5" placeholder="Hi Alex, I'd love to chat about..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-btn" id="send-btn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loader" hidden>Sending…</span>
+          </button>
+          <p class="form-status" id="form-status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer id="footer">
+    <p id="footer-note"></p>
+  </footer>
+
+  <!-- ── CURSOR ────────────────────────────────────────────── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <script src="config.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
