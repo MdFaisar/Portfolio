@@ -14,24 +14,24 @@ const CONFIG = {
 
   // ── CONTACT ────────────────────────────────────────────────
   contact: {
-    email: "alex.rivera@email.com",
-    phone: "+1 (555) 234-5678",
+    email: "amohammedfaisar@gmail.com",
+    phone: "+91 8015375860",
   },
 
   // ── SOCIAL LINKS ───────────────────────────────────────────
   socials: [
-    { label: "GitHub",    icon: "github",   url: "https://github.com/alexrivera" },
-    { label: "LinkedIn",  icon: "linkedin", url: "https://linkedin.com/in/alexrivera" },
-    { label: "Twitter",   icon: "twitter",  url: "https://twitter.com/alexrivera" },
-    { label: "LeetCode",  icon: "code",     url: "https://leetcode.com/alexrivera" },
+    { label: "GitHub", icon: "github", url: "https://github.com/MdFaisar" },
+    { label: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/in/mohammedfaisar" },
+    { label: "Social", icon: "twitter", url: "https://x.com/Faisar05" },
+    { label: "LeetCode", icon: "code", url: "https://leetcode.com/u/h9Swl9Damz/" },
   ],
 
   // ── ABOUT ME ───────────────────────────────────────────────
   about: {
-    description: `I'm a final-year Computer Science student at State University with a deep passion for software development. 
-    I thrive at the intersection of clean architecture and great user experience. 
-    When I'm not coding, you'll find me contributing to open source, writing tech blogs, or exploring new frameworks. 
-    My goal is to join a forward-thinking team where I can grow as a full-stack engineer and solve real-world problems.`,
+    description: `I'm a Pre-final year B.Tech IT student, with deep passion in AI, Cybersecurity, and upcoming technologies. Skilled in crafting
+full-stack applications with Java, Python, Flask, and contemporary web technologies. Experienced in incorporating
+GenAI, Agentic AI, and Blockchain into practical solutions. Looking for opportunities to apply my technical skills to jobs
+and projects to innovate and create impact.`,
 
     education: [
       {
@@ -39,46 +39,48 @@ const CONFIG = {
         institution: "Sri Manakula Vinayagar Engineering College",
         field: "B.Tech – Information Technology",
         year: "2023–2027",
-        gpa: "8.51 CGPA",
+        gpa: "8.5 CGPA",
       },
       {
         degree: "Higher Secondary",
         institution: "Amalorpavam Higher Secondary School",
         field: "Bio-Maths",
         year: "2022–2023",
-        gpa: "90%",
+        gpa: "89.83%",
       },
     ],
 
     stats: [
       { label: "Projects Completed", value: "18+" },
-      { label: "GitHub Commits",     value: "900+" },
-      { label: "Certifications",     value: "6" },
-      { label: "Hackathons",         value: "4" },
+      { label: "GitHub Commits", value: "900+" },
+      { label: "Certifications", value: "6" },
+      { label: "Hackathons", value: "4" },
     ],
 
     languages: [
-      { name: "English",  level: "Fluent" },
-      { name: "Tamil",    level: "Native" },
-      { name: "Hindi",    level: "Conversational" },
+      { name: "English", level: "Fluent" },
+      { name: "French", level: "Intermediate" },
+      { name: "Tamil", level: "Native" },
+      { name: "Hindi", level: "Conversational" },
     ],
+    aboutPhoto: "assets/about.jpg",
   },
 
   // ── SKILLS ─────────────────────────────────────────────────
   skills: {
     programmingLanguages: [
-      { name: "Python",     level: 85 },
-      { name: "Java",       level: 75 },
-      { name: "C/C++",      level: 65 },
+      { name: "Python", level: 85 },
+      { name: "Java", level: 75 },
+      { name: "C/C++", level: 65 },
     ],
     frontend: [
-      { name: "HTML5",      level: 92 },
-      { name: "CSS3",       level: 88 },
+      { name: "HTML5", level: 92 },
+      { name: "CSS3", level: 88 },
       { name: "JavaScript", level: 85 },
-      { name: "React.js",   level: 80 },
+      { name: "React.js", level: 80 },
     ],
     backend: [
-      { name: "Node.js",    level: 78 },
+      { name: "Node.js", level: 78 },
       { name: "Express.js", level: 75 },
     ],
     databases: [
@@ -99,40 +101,41 @@ const CONFIG = {
   // ── PROJECTS ───────────────────────────────────────────────
   projects: [
     {
-      title: "DevCollab — Real-time Code Editor",
-      description: "A collaborative, real-time code editor supporting 20+ languages, with video calling and whiteboard features. Built for remote pair programming.",
-      tags: ["React", "Node.js", "Socket.io", "WebRTC"],
-      image: "assets/project1.jpg",
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: true,
+      title: "PixelMnd",
+      description: "PixelMind is an advanced text-to-image encryption system with chat-bot designed to transform sensitive text files into innocent-looking images and secure PDF documents with the help of AI and Custom algorithm. .",
+      image: "assets/p1.jpg",
+      tags: ["Python", "Flask", "MongoDB", "Llama AI", "HTML", "CSS"],
+      liveUrl: "https://pixelmind.pythonanywhere.com/",
+      githubUrl: "https://github.com/MdFaisar/PIXELMIND-IMAGE-TYPE-TEXT-ENCRYPTION-SYSTEM",
+      featured: true
+
     },
     {
-      title: "SmartBudget — Finance Tracker",
-      description: "Personal finance web app with AI-powered expense categorization, budget forecasting, and visual analytics dashboard.",
-      tags: ["Python", "Django", "Chart.js", "PostgreSQL"],
-      image: "assets/project2.jpg",
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: true,
+      title: "Career AI",
+      description: "A comprehensive web application designed to assist individuals in discovering their ideal career paths by leveraging artificial intelligence and user-specific data.",
+      image: "assets/p2.jpg",
+      tags: ["Python", "Flask", "Llama AI", "HTML", "CSS"],
+      liveUrl: "https://faisar.pythonanywhere.com/login",
+      githubUrl: "https://github.com/MdFaisar/Career-recommendation-using-AI-and-Chatbot/",
+      featured: true
     },
     {
-      title: "PathFinder — Algorithm Visualizer",
-      description: "Interactive visualization tool for popular pathfinding and sorting algorithms with step-by-step animation controls.",
-      tags: ["JavaScript", "HTML Canvas", "CSS"],
-      image: "assets/project3.jpg",
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: true,
+      title: "To-DO List",
+      description: "A full-stack To-Do List application built with the MERN stack (MongoDB, Express.js, React.js, Node.js) that allows users to efficiently manage their tasks with full CRUD operations",
+      image: "assets/p3.jpg",
+      tags: ["MongoDB", "Express.js", "React.js", "Node.js"],
+      liveUrl: "https://mohammedfaisar-portfolio.netlify.app/",
+      githubUrl: "https://github.com/MdFaisar/ToDo-List-MERN-Stack-Project",
+      featured: true
     },
     {
-      title: "EcoTrack — Carbon Footprint App",
-      description: "Mobile-first web app that tracks daily activities and calculates carbon emissions with personalized reduction tips.",
-      tags: ["React", "Firebase", "REST API"],
-      image: "",
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false,
+      title: "Trip-AI",
+      description: "It's a AI based trip planning assistant. Which gives a clear layout of the travel planning (day-to-day)",
+      image: "assets/p4.jpg",
+      tags: ["Python", "Streamlit", "Llama AI", "Groq"],
+      liveUrl: "https://tripai.pythonanywhere.com/",
+      githubUrl: "https://github.com/MdFaisar/trip_ai",
+      featured: true
     },
     {
       title: "NewsAI — Summarizer",
@@ -157,52 +160,64 @@ const CONFIG = {
   // ── CERTIFICATIONS ─────────────────────────────────────────
   certifications: [
     {
-      title: "AWS Certified Cloud Practitioner",
+      title: "AWS Certified Cloud Foundations",
+      description: "Professional certification demonstrating expertise in designing distributed systems and applications on AWS platform with best practices for security, reliability, and cost optimization.",
+      image: "assets/aws.jpg",
       issuer: "Amazon Web Services",
-      date: "Jan 2024",
-      credentialUrl: "#",
-      logo: "aws",
+      technologies: ["AWS", "Cloud Computing", "System Architecture", "Security"],
+      credentialLink: "https://www.credly.com/badges/837e2e85-f8fb-4701-8daf-f60c5314147d/print",
+      issueDate: "2024",
     },
     {
-      title: "Meta Front-End Developer",
-      issuer: "Meta / Coursera",
-      date: "Sep 2023",
-      credentialUrl: "#",
-      logo: "meta",
+      title: "Cisco Certified Network Associate (CCNA)",
+      description: "Industry-recognized certification validating foundational knowledge in networking, including IP connectivity, security fundamentals, automation, and Cisco network infrastructure.",
+      image: "assets/cisco.jpg",
+      issuer: "Cisco",
+      technologies: ["Networking", "Routing & Switching", "IP Services", "Network Security"],
+      credentialLink: "https://www.credly.com/badges/c236f597-b50c-4d89-8ae1-27c695cb49b6",
+      issueDate: "2025",
     },
     {
-      title: "Google Data Analytics Certificate",
-      issuer: "Google / Coursera",
-      date: "Jun 2023",
-      credentialUrl: "#",
-      logo: "google",
+      title: "Infosys Certified - Frontend Developer",
+      description: "Certification validating skills in building attractive UI with scalable and reliable templates.",
+      image: "assets/infosys.jpg",
+      issuer: "Infosys Springboard",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      credentialLink: "https://drive.google.com/file/d/13GyQav8RK_yaOTPPKAMGipvgwTifuJf1/view?usp=drivesdk",
+      issueDate: "2025",
     },
     {
-      title: "JavaScript Algorithms & Data Structures",
-      issuer: "freeCodeCamp",
-      date: "Mar 2023",
-      credentialUrl: "#",
-      logo: "fcc",
+      title: "MongoDB Certified Developer",
+      description: "Certification demonstrating proficiency in MongoDB database access, development, and the use of NoSQL in modern applications.",
+      image: "assets/mongodb.jpg",
+      issuer: "MongoDB Inc.",
+      technologies: ["MongoDB", "NoSQL", "Database Design", "Node.js"],
+      credentialLink: "https://drive.google.com/file/d/1awcIDuY5WUM_8sZ7QwRMd3KCo9bA1L10/view?usp=drivesdk",
+      issueDate: "2024",
     },
     {
-      title: "Python for Everybody Specialization",
-      issuer: "University of Michigan / Coursera",
-      date: "Dec 2022",
-      credentialUrl: "#",
-      logo: "python",
+      title: "Python For Data Science",
+      description: "Professional certificate program in python skills and data science application through python.",
+      image: "assets/nptel.jpg",
+      issuer: "NPTEL",
+      technologies: ["Python", "Linear Regression", "Matplotlib", "NumPy & Pandas"],
+      credentialLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24CS68S14460038002702746",
+      issueDate: "2024",
     },
     {
-      title: "Docker Essentials",
-      issuer: "IBM / Cognitive Class",
-      date: "Aug 2023",
-      credentialUrl: "#",
-      logo: "docker",
+      title: "AICTEE - AI/ML",
+      description: "Professional certification validating skills in accessing and demonstrating Artificial Intelligence and Machine Learning practices.",
+      image: "assets/aictee.jpg",
+      issuer: "AICTEE",
+      technologies: ["Docker", "Containers", "DevOps", "Kubernetes"],
+      credentialLink: "https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=559bffdc11a063b1d0cbea8e644e883b",
+      issueDate: "2025",
     },
   ],
 
   // ── FOOTER ─────────────────────────────────────────────────
   footer: {
     note: "Designed & built by Mohammed Faisar A",
-    year: "2025",
+    year: "2026",
   },
 };
