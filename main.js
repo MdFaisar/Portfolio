@@ -32,7 +32,7 @@
   // ── PAGE TITLE & NAV LOGO ─────────────────────────────────
   document.title = `${CONFIG.name} · Portfolio`;
   $("#page-title") && (document.title = `${CONFIG.name} · Portfolio`);
-  const initials = CONFIG.name.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase();
+  const initials = "MFA";
   $("#nav-logo").textContent = initials;
 
   // ── HERO ──────────────────────────────────────────────────
@@ -64,7 +64,7 @@
   // Photo in About section
   const aboutImg = $("#about-photo-img");
   if (aboutImg) {
-    aboutImg.src = CONFIG.photo;
+    aboutImg.src = CONFIG.about.aboutPhoto;
     aboutImg.alt = CONFIG.name;
   }
   const aboutFallback = $("#about-photo-fallback");
@@ -185,19 +185,23 @@
   });
 
   // ── CERTIFICATIONS ─────────────────────────────────────────
-  const certIconMap = {
-    aws: "AWS", meta: "META", google: "GOO", fcc: "FCC", python: "PY", docker: "DOC",
-  };
   const certsGrid = $("#certs-grid");
   CONFIG.certifications.forEach((c) => {
     const card = el("div", "cert-card");
+    const techTags = (c.technologies || [])
+      .map((t) => `<span class="cert-tech-tag">${t}</span>`)
+      .join("");
+    const imgContent = c.image
+      ? `<div class="cert-img"><img src="${c.image}" alt="${c.title}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div class="cert-img-placeholder" style="display:none">🏅</div></div>`
+      : `<div class="cert-img"><div class="cert-img-placeholder">🏅</div></div>`;
     card.innerHTML = `
-      <div class="cert-icon">${certIconMap[c.logo] || c.logo.slice(0, 3).toUpperCase()}</div>
-      <div>
+      ${imgContent}
+      <div class="cert-body">
         <div class="cert-title">${c.title}</div>
-        <div class="cert-issuer">${c.issuer}</div>
-        <div class="cert-date">${c.date}</div>
-        <a href="${c.credentialUrl}" target="_blank" rel="noopener" class="cert-link">View Credential ↗</a>
+        <div class="cert-issuer">${c.issuer} · ${c.issueDate || ""}</div>
+        <p class="cert-desc">${c.description || ""}</p>
+        <div class="cert-techs">${techTags}</div>
+        <a href="${c.credentialLink || "#"}" target="_blank" rel="noopener" class="cert-link">View Credential ↗</a>
       </div>`;
     certsGrid.appendChild(card);
   });
@@ -221,51 +225,54 @@
     contactSocials.appendChild(a);
   });
 
-  // ── CONTACT FORM (live mailto sender) ─────────────────────
-  const form = $("#contact-form");
-  const sendBtn = $("#send-btn");
-  const formStatus = $("#form-status");
+  // Contact form submission with Formspree
+  const contactForm = document.getElementById('contact-form');
+  const formMessage = document.querySelector('.form-message');
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const name    = $("#f-name").value.trim();
-    const email   = $("#f-email").value.trim();
-    const subject = $("#f-subject").value.trim();
-    const message = $("#f-message").value.trim();
-
-    if (!name || !email || !subject || !message) {
-      formStatus.textContent = "Please fill in all fields.";
-      formStatus.className = "form-status error";
-      return;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      formStatus.textContent = "Please enter a valid email address.";
-      formStatus.className = "form-status error";
-      return;
-    }
-
-    // Compose mailto link (live mail sender without backend)
-    const body = encodeURIComponent(
-      `Hi ${CONFIG.name.split(" ")[0]},\n\n${message}\n\n— ${name} (${email})`
-    );
-    const mailtoURL = `mailto:${CONFIG.contact.email}?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-    sendBtn.querySelector(".btn-text").hidden = true;
-    sendBtn.querySelector(".btn-loader").hidden = false;
-    sendBtn.disabled = true;
-
-    setTimeout(() => {
-      window.location.href = mailtoURL;
-      formStatus.textContent = "✓ Your email client is opening. Thank you for reaching out!";
-      formStatus.className = "form-status success";
-      sendBtn.querySelector(".btn-text").hidden = false;
-      sendBtn.querySelector(".btn-loader").hidden = true;
-      sendBtn.disabled = false;
-      form.reset();
-    }, 700);
+  contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Show loading state
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      
+      const formData = new FormData(contactForm);
+      
+      // Using Formspree - replace with your actual Formspree endpoint
+      fetch('https://formspree.io/f/xrblaeep', {
+          method: 'POST',
+          body: formData,
+          headers: {
+              'Accept': 'application/json'
+          }
+      })
+      .then(response => {
+          if (response.ok) {
+              formMessage.textContent = 'Thank you! Your message has been sent successfully.';
+              formMessage.className = 'form-message success';
+              formMessage.style.display = 'block';
+              contactForm.reset();
+          } else {
+              throw new Error('Network response was not ok');
+          }
+      })
+      .catch(error => {
+          formMessage.textContent = 'Oops! There was a problem sending your message. Please try again later.';
+          formMessage.className = 'form-message error';
+          formMessage.style.display = 'block';
+      })
+      .finally(() => {
+          // Reset button state
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+          
+          // Hide message after 5 seconds
+          setTimeout(() => {
+              formMessage.style.display = 'none';
+          }, 5000);
+      });
   });
 
   // ── FOOTER ─────────────────────────────────────────────────
