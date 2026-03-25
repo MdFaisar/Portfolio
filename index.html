@@ -12,7 +12,7 @@
 
   <!-- ── NAV ─────────────────────────────────────────────── -->
   <nav id="navbar">
-    <div class="nav-logo" id="nav-logo">AR</div>
+    <div class="nav-logo" id="nav-logo">MFA</div>
     <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -89,7 +89,7 @@
         </div>
         <div class="about-photo-col">
           <div class="about-photo-wrap">
-            <img id="about-photo-img" src="" alt="Student photo" onerror="this.style.display='none'" />
+            <img id="about-photo-img" src="" alt="Student photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
             <div class="about-photo-fallback" id="about-photo-fallback"></div>
           </div>
           <!-- Row 2: languages left | projects count right -->
@@ -161,26 +161,23 @@
           <div class="form-row">
             <div class="form-group">
               <label for="f-name">Your Name</label>
-              <input type="text" id="f-name" placeholder="Jane Doe" required />
+              <input type="text" id="f-name" name="name" placeholder="Jane Doe" required />
             </div>
             <div class="form-group">
               <label for="f-email">Your Email</label>
-              <input type="email" id="f-email" placeholder="jane@example.com" required />
+              <input type="email" id="f-email" name="email" placeholder="jane@example.com" required />
             </div>
           </div>
           <div class="form-group">
             <label for="f-subject">Subject</label>
-            <input type="text" id="f-subject" placeholder="Internship Opportunity" required />
+            <input type="text" id="f-subject" name="subject" placeholder="Internship Opportunity" required />
           </div>
           <div class="form-group">
             <label for="f-message">Message</label>
-            <textarea id="f-message" rows="5" placeholder="Hi Alex, I'd love to chat about..." required></textarea>
+            <textarea id="f-message" name="message" rows="5" placeholder="Hi, I'd love to chat about..." required></textarea>
           </div>
-          <button type="submit" class="btn-primary form-btn" id="send-btn">
-            <span class="btn-text">Send Message</span>
-            <span class="btn-loader" hidden>Sending…</span>
-          </button>
-          <p class="form-status" id="form-status"></p>
+          <button type="submit" class="btn-primary form-btn" id="send-btn">Send Message</button>
+          <p class="form-message" id="form-message"></p>
         </form>
       </div>
     </div>
